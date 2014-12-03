@@ -14,7 +14,7 @@
     self = [super init];
     
     if (self) {
-        CCLOG(@"Penguin created");
+        CCLOG(@"Pengu created");
     }
     
     return self;
