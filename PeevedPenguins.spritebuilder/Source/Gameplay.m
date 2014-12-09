@@ -48,8 +48,7 @@
     self.position = ccp(0, 0);
     CCActionFollow *follow = [CCActionFollow actionWithTarget:penguin worldBoundary:self.boundingBox];
     [self runAction:follow];
-    
-    
+    [_contentNode runAction:follow];
     
   
 }
@@ -58,11 +57,6 @@
     // reload this level
     [[CCDirector sharedDirector] replaceScene: [CCBReader loadAsScene:@"Gameplay"]];
     
-     CCNode* penguin = [CCBReader load:@"Penguin"];
-    
-    self.position = ccp(0,0);
-    CCActionFollow *follow = [CCActionFollow actionWithTarget:penguin worldBoundary:self.boundingBox];
-    [_contentNode runAction:follow];
     }
 
 @end
