@@ -18,6 +18,8 @@
 
 // is called when CCB file has completed loading
 -(void)didLoadFromCCB {
+    // visualize physics bodies & joints
+    _physicsNode.debugDraw = TRUE;
     //tell this scene to accept touches
     self.userInteractionEnabled = TRUE;
     CCScene *level = [CCBReader loadAsScene:@"Levels/Level1"];
