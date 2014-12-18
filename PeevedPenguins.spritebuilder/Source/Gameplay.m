@@ -70,6 +70,12 @@
     }
 }
 
+-(void) touchEnded:(UITouch *)touch withEvent:(UIEvent *)event
+{
+    // when touches end, meaning the user releases their finger, release the catapult
+    [self releaseCatapult];
+}
+
 
 -(void)launchPenguin {
     //loads the penguin.cbb we have set up in Splitebuilder
