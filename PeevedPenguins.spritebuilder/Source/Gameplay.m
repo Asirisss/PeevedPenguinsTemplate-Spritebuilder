@@ -37,31 +37,25 @@
     [_levelNode addChild:level];
 }
 
-- (void)touchMoved:(CCTouch *)touch withEvent:(CCTouchEvent *)event
-{
-    // whenever touches move, update the position of the mouseJointNode to the touch position
-    CGPoint touchLocation = [touch locationInNode:_contentNode];
-    _mouseJointNode.position = touchLocation;
-}
 
 //called on every touch in this scene
 -(void)touchBegan:(CCTouch *)touch withEvent:(CCTouchEvent *)event
 {
     
-//    CGPoint touchLocation = [touch locationInNode:_contentNode];
-//    
-//    // start catapult dragging when a touch inside of the catapult arm occurs
-//    if (CGRectContainsPoint([_catapultArm boundingBox], touchLocation))
-//    {
-//        // move the mouseJointNode to the touch position
-//        _mouseJointNode.position = touchLocation;
-//        
-//        // setup a spring joint between the mouseJointNode and the catapultArm
-//        _mouseJoint = [CCPhysicsJoint connectedSpringJointWithBodyA:_mouseJointNode.physicsBody bodyB:_catapultArm.physicsBody anchorA:ccp(0, 0) anchorB:ccp(34, 138) restLength:0.f stiffness:3000.f damping:150.f];
-//        
-//        // create a penguin from the ccb-file
-//        _currentPenguin = [CCBReader load:@"Penguin"];
-//        // initially position it on the scoop. 34,138 is the position in the node space of the _catapultArm
+    CGPoint touchLocation = [touch locationInNode:_contentNode];
+    
+    // start catapult dragging when a touch inside of the catapult arm occurs
+    if (CGRectContainsPoint([_catapultArm boundingBox], touchLocation))
+    {
+        // move the mouseJointNode to the touch position
+        _mouseJointNode.position = touchLocation;
+        
+        // setup a spring joint between the mouseJointNode and the catapultArm
+        _mouseJoint = [CCPhysicsJoint connectedSpringJointWithBodyA:_mouseJointNode.physicsBody bodyB:_catapultArm.physicsBody anchorA:ccp(0, 0) anchorB:ccp(34, 138) restLength:0.f stiffness:3000.f damping:150.f];
+        
+        // create a penguin from the ccb-file
+        _currentPenguin = [CCBReader load:@"Penguin"];
+        // initially position it on the scoop. 34,138 is the position in the node space of the _catapultArm
         CGPoint penguinPosition = [_catapultArm convertToWorldSpace:ccp(34, 138)];
         // transform the world position to the node space to which the penguin will be added (_physicsNode)
         _currentPenguin.position = [_physicsNode convertToNodeSpace:penguinPosition];
@@ -88,6 +82,14 @@
     [_contentNode runAction:follow];
     
 }
+
+- (void)touchMoved:(CCTouch *)touch withEvent:(CCTouchEvent *)event
+{
+    // whenever touches move, update the position of the mouseJointNode to the touch position
+    CGPoint touchLocation = [touch locationInNode:_contentNode];
+    _mouseJointNode.position = touchLocation;
+}
+
 
 - (void)releaseCatapult {
     if (_mouseJoint != nil)
