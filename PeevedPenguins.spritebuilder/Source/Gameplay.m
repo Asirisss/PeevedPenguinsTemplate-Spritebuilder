@@ -22,7 +22,10 @@
 }
 
 // is called when CCB file has completed loading
--(void)didLoadFromCCB {
+-(void)didLoadFromCCB
+{
+    _physicsNode.collisionDelegate = self;
+    
     _mouseJointNode.physicsBody.collisionMask = @[];
     
     // nothing shall collide with our invisible nodes
@@ -124,6 +127,11 @@
     [_contentNode runAction:follow];
     
   
+}
+
+-(void)ccPhysicsCollisionPostSolve:(CCPhysicsCollisionPair *)pair seal:(CCNode *)nodeA wildcard:(CCNode *)nodeB
+{
+    CCLOG(@"Something collided with a seal!");
 }
 
 - (void)retry {
