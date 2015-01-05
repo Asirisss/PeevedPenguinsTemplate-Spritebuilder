@@ -128,7 +128,7 @@
 				<key>type</key>
 				<string>Float</string>
 				<key>value</key>
-				<real>-1</real>
+				<real>1</real>
 			</dict>
 			<dict>
 				<key>name</key>
@@ -212,16 +212,16 @@
 				<key>value</key>
 				<array>
 					<array>
+						<real>0.99999600648880005</real>
+						<real>1</real>
+						<real>1</real>
+						<real>0.18000000715255737</real>
+					</array>
+					<array>
 						<real>0.071372650563716888</real>
 						<real>0.10835220664739609</real>
 						<real>0.10929704457521439</real>
 						<real>0.25999999046325684</real>
-					</array>
-					<array>
-						<real>0.99999600648880005</real>
-						<real>1</real>
-						<real>1</real>
-						<real>0.30000001192092896</real>
 					</array>
 				</array>
 			</dict>
@@ -233,15 +233,15 @@
 				<key>value</key>
 				<array>
 					<array>
+						<real>0.99999600648880005</real>
+						<real>1</real>
+						<real>1</real>
+						<real>0.30000001192092896</real>
+					</array>
+					<array>
 						<real>0.066645599901676178</real>
 						<real>0.10375448316335678</real>
 						<real>0.0</real>
-						<real>0.25999999046325684</real>
-					</array>
-					<array>
-						<real>0.10360811650753021</real>
-						<real>0.042809866368770599</real>
-						<real>0.10375448316335678</real>
 						<real>0.25999999046325684</real>
 					</array>
 				</array>
@@ -283,8 +283,8 @@
 				<string>FloatVar</string>
 				<key>value</key>
 				<array>
-					<real>40</real>
-					<real>20</real>
+					<real>50</real>
+					<real>0.0</real>
 				</array>
 			</dict>
 			<dict>
